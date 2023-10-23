@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppTCC.Views.HomePage" Title="PEDIDOS RSX">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="10">
+            <Frame BackgroundColor="Beige" CornerRadius="25" Margin="15">
+                <Image Source="imgfios"/>
+            </Frame>
+            <Frame BackgroundColor="Beige" CornerRadius="25" Margin="15">
+                <Image Source="rsx"/>
+            </Frame>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

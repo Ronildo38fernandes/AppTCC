@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppTCC.Views.PageUpCliente">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Nome" FontSize="Medium" FontAttributes="Bold"/>
+            <Entry x:Name="txtNome" Keyboard="Plain" Text="{Binding nome, Mode=TwoWay}"/>
+            <Label Text="CNPJ" FontSize="Medium" FontAttributes="Bold"/>
+            <Entry x:Name="txtCnpj" Keyboard="Plain" Text="{Binding cnpj, Mode=TwoWay}"/>
+            <Button Text="Atualizar" BackgroundColor="Orange" x:Name="btnAtualizar" Clicked="btnAtualizar_Clicked" />
+            <Button Text="Apagar" BackgroundColor="Red" x:Name="btnDeletar" Clicked="btnDeletar_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

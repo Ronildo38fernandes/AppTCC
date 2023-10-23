@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace AppTCC.Models
+{
+    public class Cliente
+    {
+        public int id { get; set; }
+        public string nome { get; set; }
+        public string cnpj { get; set; }
+    }
+
+  
+}

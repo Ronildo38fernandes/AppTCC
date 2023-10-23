@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppTCC.Views.PageCadastroCliente">
+    <ContentPage.Content>
+        <StackLayout Margin="15">
+            <Label Text="Nome" FontSize="Medium" FontAttributes="Bold" />
+            <Entry x:Name="txtNome" Keyboard="Plain"/>
+            <Label Text="CNPJ" FontSize="Medium" FontAttributes="Bold" />
+            <Entry x:Name="txtCnpj" Keyboard="Plain"/>
+            <Button Text="Cadastar" BackgroundColor="White" FontAttributes="Bold" x:Name="btnCadastrar" Clicked="btnCadastrar_Clicked" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
