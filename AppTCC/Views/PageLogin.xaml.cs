@@ -20,7 +20,7 @@ namespace AppTCC.Views
 
         private void btLogin_Clicked(object sender, EventArgs e)
         {
-            if (txtLogin.Text == "teste" && txtSenha.Text == "teste")
+            if (txtLogin.Text == "teste" && txtSenha.Text == "teste"|| txtLogin.Text=="ronildo" && txtSenha.Text=="123")
             {
                 Navigation.PushAsync(new MainPage());
             }

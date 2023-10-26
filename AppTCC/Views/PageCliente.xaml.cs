@@ -16,11 +16,11 @@ namespace AppTCC.Views
     {
         List<Cliente> clientes = Conexao.ListarClientes();
 
-			//new List<String> { "ronildo","ronnie","matheus","anderson","vinicius","eliezer","gilmar","leonardo","emerson","luan" ,"Carlão"};
+			
 		public PageCliente()
         {
             InitializeComponent();
-			//ClientesListView.ItemsSource = clientes.Select(cliente => cliente.nome).ToList();
+			
 		}
 
         protected override void OnAppearing()
@@ -40,13 +40,6 @@ namespace AppTCC.Views
 		{
 			Navigation.PushAsync(new PageCadastroCliente());
 		}
-
-        private void btnEditar_Clicked(object sender, EventArgs e)
-        {
-			//Navigation.PushAsync(new PageUpCliente());
-            
-            
-        }
 
         private void ClientesListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {

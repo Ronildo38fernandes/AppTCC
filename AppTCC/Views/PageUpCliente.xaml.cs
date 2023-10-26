@@ -36,7 +36,7 @@ namespace AppTCC.Views
 
         private void btnDeletar_Clicked(object sender, EventArgs e)
         {
-            if (cliente.id != 0)
+            if (cliente.id_cliente != 0)
             {
                 Conexao.ExcluirCliente(cliente);
                 Navigation.PopAsync();

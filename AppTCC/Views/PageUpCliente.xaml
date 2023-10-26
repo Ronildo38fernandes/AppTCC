@@ -4,12 +4,35 @@
              x:Class="AppTCC.Views.PageUpCliente">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Nome" FontSize="Medium" FontAttributes="Bold"/>
-            <Entry x:Name="txtNome" Keyboard="Plain" Text="{Binding nome, Mode=TwoWay}"/>
-            <Label Text="CNPJ" FontSize="Medium" FontAttributes="Bold"/>
-            <Entry x:Name="txtCnpj" Keyboard="Plain" Text="{Binding cnpj, Mode=TwoWay}"/>
-            <Button Text="Atualizar" BackgroundColor="Orange" x:Name="btnAtualizar" Clicked="btnAtualizar_Clicked" />
-            <Button Text="Apagar" BackgroundColor="Red" x:Name="btnDeletar" Clicked="btnDeletar_Clicked" />
+
+
+            <ScrollView>
+                <StackLayout Margin="3">
+
+                    <Label Text="Nome" FontSize="Medium" FontAttributes="Bold" />
+                    <Entry x:Name="txtNome" Keyboard="Plain" Text="{Binding nome, Mode=TwoWay}"/>
+                    <Label Text="CNPJ" FontSize="Medium" FontAttributes="Bold" />
+                    <Entry x:Name="txtCnpj" Keyboard="Plain" Text="{Binding cnpj, Mode=TwoWay}"/>
+                    <Label Text="Inscrição estadual" FontSize="Medium" FontAttributes="Bold" />
+                    <Entry x:Name="txtInscricao" Keyboard="Plain" Text="{Binding inscricao,Mode=TwoWay}"/>
+                    <Label Text="E-mail" FontSize="Medium" FontAttributes="Bold" />
+                    <Entry x:Name="txtEmail" Keyboard="Plain" Text="{Binding email,Mode=TwoWay}"/>
+                    <Label Text="Endereço" FontSize="Medium" FontAttributes="Bold" />
+                    <Entry x:Name="txtendereco" Keyboard="Plain" Text="{Binding endereco,Mode=TwoWay}"/>
+                    <Label Text="Numero" FontSize="Medium" FontAttributes="Bold" />
+                    <Entry x:Name="txtNumero" Keyboard="Plain" Text="{Binding numero,Mode=TwoWay}"/>
+                    <Label Text="Telefone" FontSize="Medium" FontAttributes="Bold" />
+                    <Entry x:Name="txtTelefone" Keyboard="Plain" Text="{Binding telefone,Mode=TwoWay}"/>
+                    <Label Text="Cidade" FontSize="Medium" FontAttributes="Bold" />
+                    <Entry x:Name="txtCidade" Keyboard="Plain" Text="{Binding cidade,Mode=TwoWay}"/>
+                    <Label Text="Estado" FontSize="Medium" FontAttributes="Bold" />
+                    <Entry x:Name="txtEstado" Keyboard="Plain" Text="{Binding cidade,Mode=TwoWay}"/>
+
+                    <Button Text="Atualizar" BackgroundColor="Orange" x:Name="btnAtualizar" Clicked="btnAtualizar_Clicked" />
+                    <Button Text="Apagar" BackgroundColor="Red" x:Name="btnDeletar" Clicked="btnDeletar_Clicked" />
+                </StackLayout>
+            </ScrollView>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

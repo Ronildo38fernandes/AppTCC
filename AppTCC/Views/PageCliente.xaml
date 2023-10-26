@@ -5,27 +5,19 @@
              x:Class="AppTCC.Views.PageCliente" Title="CLIENTES">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Página dos Clientes"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            
-
-            <SearchBar x:Name="Clientes" TextChanged="Clientes_TextChanged"/>
-
-            <ListView x:Name="ClientesListView" ItemSelected="ClientesListView_ItemSelected">
-                
-                <ListView.ItemTemplate>
-                    
-                    <DataTemplate>
-                        <ViewCell>
+            <SearchBar x:Name="Clientes" TextChanged="Clientes_TextChanged" />
+            <ListView x:Name="ClientesListView" ItemSelected="ClientesListView_ItemSelected" RowHeight="100" >
+                <ListView.ItemTemplate >
+                    <DataTemplate >
+                        <ViewCell >
                             <StackLayout Orientation="Horizontal">
-                                <StackLayout Orientation="Vertical" >
+                                <StackLayout Orientation="Vertical" Padding="5" >
                                     <Label Text="{Binding nome}" TextColor="Blue" FontSize="20" />
                                     <Label Text="{Binding cnpj}" TextColor="Blue" FontSize="20"/>
+                                    <Label Text="{Binding telefone}" TextColor="Blue" FontSize="20" LineBreakMode="CharacterWrap"/>
                                 </StackLayout>
                             </StackLayout>
                         </ViewCell>
-                                                    
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

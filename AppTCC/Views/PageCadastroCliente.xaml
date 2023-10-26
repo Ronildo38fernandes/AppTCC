@@ -4,12 +4,30 @@
              x:Class="AppTCC.Views.PageCadastroCliente">
     <ContentPage.Content>
         <StackLayout Margin="15">
-            <Label Text="Nome" FontSize="Medium" FontAttributes="Bold" />
-            <Entry x:Name="txtNome" Keyboard="Plain"/>
-            <Label Text="CNPJ" FontSize="Medium" FontAttributes="Bold" />
-            <Entry x:Name="txtCnpj" Keyboard="Plain"/>
-            <Button Text="Cadastar" BackgroundColor="White" FontAttributes="Bold" x:Name="btnCadastrar" Clicked="btnCadastrar_Clicked" />
-
+            <ScrollView>
+                <StackLayout>
+                    
+                    <Label Text="Nome" FontSize="Medium" FontAttributes="Bold" />
+                    <Entry x:Name="txtNome" Keyboard="Plain"/>
+                    <Label Text="CNPJ" FontSize="Medium" FontAttributes="Bold" />
+                    <Entry x:Name="txtCnpj" Keyboard="Plain"/>
+                    <Label Text="Inscrição estadual" FontSize="Medium" FontAttributes="Bold" />
+                    <Entry x:Name="txtInscricao" Keyboard="Plain"/>
+                    <Label Text="E-mail" FontSize="Medium" FontAttributes="Bold" />
+                    <Entry x:Name="txtEmail" Keyboard="Plain"/>
+                    <Label Text="Endereço" FontSize="Medium" FontAttributes="Bold" />
+                    <Entry x:Name="txtendereco" Keyboard="Plain"/>
+                    <Label Text="Numero" FontSize="Medium" FontAttributes="Bold" />
+                    <Entry x:Name="txtNumero" Keyboard="Plain"/>
+                    <Label Text="Telefone" FontSize="Medium" FontAttributes="Bold" />
+                    <Entry x:Name="txtTelefone" Keyboard="Plain"/>
+                    <Label Text="Cidade" FontSize="Medium" FontAttributes="Bold" />
+                    <Entry x:Name="txtCidade" Keyboard="Plain"/>
+                    <Label Text="Estado" FontSize="Medium" FontAttributes="Bold" />
+                    <Entry x:Name="txtEstado" Keyboard="Plain"/>
+                    <Button Text="Cadastar" BackgroundColor="White" FontAttributes="Bold" x:Name="btnCadastrar" Clicked="btnCadastrar_Clicked" />
+                </StackLayout>
+            </ScrollView>   
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
