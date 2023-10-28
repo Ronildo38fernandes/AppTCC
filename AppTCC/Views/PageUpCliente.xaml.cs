@@ -29,7 +29,9 @@ namespace AppTCC.Views
         }
 
         private void btnAtualizar_Clicked(object sender, EventArgs e)
+
         {
+         
             Conexao.AtualizarCliente(cliente);
             Navigation.PopAsync();
         }

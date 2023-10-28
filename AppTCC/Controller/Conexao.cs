@@ -29,15 +29,15 @@ namespace AppTCC.Controller
                             Cliente cliente = new Cliente()
                             {
                                 id_cliente = reader.GetInt32(0),
-                                nome = reader.GetString(1),
-                                cnpj = reader.GetString(2),
-                                inscricao = reader.GetString(3),
-                                email = reader.GetString(4),
-                                endereco = reader.GetString(5),
-                                numero = reader.GetString(6),
-                                telefone =  reader.GetString(7),
-                                cidade =reader.GetString(8),
-                                estado = reader.GetString(9)
+                                nome = reader.GetString(1) ??" ",
+                                cnpj = reader.GetString(2)?? " ",
+                                inscricao = reader.GetString(3) ?? " ",
+                                email = reader.GetString(4) ?? " ",
+                                endereco = reader.GetString(5) ?? " ",
+                                numero = reader.GetString(6) ?? " ",
+                                telefone =  reader.GetString(7) ?? " ",
+                                cidade =reader.GetString(8) ?? " ",
+                                estado = reader.GetString(9) ?? " " 
                             };
                             listaclientes.Add(cliente);
                         }
@@ -47,6 +47,7 @@ namespace AppTCC.Controller
                 return listaclientes;
             }
         }
+
         public static void InserirCliente(string nome, string cnpj, string inscricao,string email,string endereco, string numero, string telefone, string cidade, string estado)
         {
             string sql = "INSERT INTO cliente(nome, cnpj,inscricao,email,endereco,numero,telefone,cidade,estado) VALUES (@nome, @cnpj,@inscricao,@email,@endereco,@numero,@telefone,@cidade,@estado)";
@@ -75,7 +76,7 @@ namespace AppTCC.Controller
 
         public static void AtualizarCliente(Cliente cliente)
         {
-            string sql = "UPDATE cliente SET nome=@nome, cnpj=@cnpj WHERE id_cliente=@id_cliente";
+            string sql = "UPDATE cliente SET nome=@nome, cnpj=@cnpj,inscricao=@inscricao,email=@email,endereco=@endereco,numero=@numero,telefone=@telefone,cidade=@cidade,estado=@estado WHERE id_cliente=@id_cliente";
             try
             {
                 using (MySqlConnection con = new MySqlConnection(conn))
@@ -83,9 +84,16 @@ namespace AppTCC.Controller
                     con.Open();
                     using (MySqlCommand cmd = new MySqlCommand(sql, con))
                     {
+                        cmd.Parameters.Add("@id_cliente", MySqlDbType.Int32).Value = cliente.id_cliente;
                         cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = cliente.nome;
                         cmd.Parameters.Add("@cnpj", MySqlDbType.VarChar).Value = cliente.cnpj;
-                        cmd.Parameters.Add("@id_cliente", MySqlDbType.Int32).Value = cliente.id_cliente;
+                        cmd.Parameters.Add("@inscricao", MySqlDbType.VarChar).Value = cliente.inscricao;
+                        cmd.Parameters.Add("@email", MySqlDbType.VarChar).Value = cliente.email;
+                        cmd.Parameters.Add("@endereco", MySqlDbType.VarChar).Value = cliente.endereco;
+                        cmd.Parameters.Add("@numero", MySqlDbType.VarChar).Value = cliente.numero;
+                        cmd.Parameters.Add("@telefone", MySqlDbType.VarChar).Value = cliente.telefone;
+                        cmd.Parameters.Add("@cidade", MySqlDbType.VarChar).Value = cliente.cidade;
+                        cmd.Parameters.Add("@estado", MySqlDbType.VarChar).Value = cliente.estado;
                         cmd.CommandType = CommandType.Text;
                         cmd.ExecuteNonQuery();
                     }

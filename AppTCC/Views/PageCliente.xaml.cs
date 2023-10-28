@@ -44,12 +44,10 @@ namespace AppTCC.Views
         private void ClientesListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if (e.SelectedItem != null)
-            
+            {
                 NavegaCliente(e.SelectedItem as Cliente);
+            }
 
-            
-            
-            
         }
 
 

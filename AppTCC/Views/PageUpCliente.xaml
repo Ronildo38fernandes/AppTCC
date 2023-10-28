@@ -26,10 +26,9 @@
                     <Label Text="Cidade" FontSize="Medium" FontAttributes="Bold" />
                     <Entry x:Name="txtCidade" Keyboard="Plain" Text="{Binding cidade,Mode=TwoWay}"/>
                     <Label Text="Estado" FontSize="Medium" FontAttributes="Bold" />
-                    <Entry x:Name="txtEstado" Keyboard="Plain" Text="{Binding cidade,Mode=TwoWay}"/>
-
-                    <Button Text="Atualizar" BackgroundColor="Orange" x:Name="btnAtualizar" Clicked="btnAtualizar_Clicked" />
-                    <Button Text="Apagar" BackgroundColor="Red" x:Name="btnDeletar" Clicked="btnDeletar_Clicked" />
+                    <Entry x:Name="txtEstado" Keyboard="Plain" Text="{Binding estado,Mode=TwoWay}"/>
+                    <Button Text="Atualizar" BackgroundColor="Orange" FontAttributes="Bold" TextColor="White" x:Name="btnAtualizar" Clicked="btnAtualizar_Clicked" />
+                    <Button Text="Apagar" BackgroundColor="Red" FontAttributes="Bold" TextColor="White" x:Name="btnDeletar" Clicked="btnDeletar_Clicked" />
                 </StackLayout>
             </ScrollView>
 

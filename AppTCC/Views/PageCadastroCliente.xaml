@@ -1,31 +1,49 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AppTCC.Controller"
              x:Class="AppTCC.Views.PageCadastroCliente">
+             
     <ContentPage.Content>
         <StackLayout Margin="15">
             <ScrollView>
                 <StackLayout>
-                    
+
                     <Label Text="Nome" FontSize="Medium" FontAttributes="Bold" />
                     <Entry x:Name="txtNome" Keyboard="Plain"/>
                     <Label Text="CNPJ" FontSize="Medium" FontAttributes="Bold" />
-                    <Entry x:Name="txtCnpj" Keyboard="Plain"/>
+                    <Entry x:Name="txtCnpj" Keyboard="Plain">
+                        <Entry.Behaviors>
+                            <local:CNPJFormatterBehavior />
+                        </Entry.Behaviors>
+                    </Entry>
                     <Label Text="Inscrição estadual" FontSize="Medium" FontAttributes="Bold" />
                     <Entry x:Name="txtInscricao" Keyboard="Plain"/>
                     <Label Text="E-mail" FontSize="Medium" FontAttributes="Bold" />
-                    <Entry x:Name="txtEmail" Keyboard="Plain"/>
+                    <Entry x:Name="txtEmail" Keyboard="Email">
+                        <Entry.Behaviors>
+                            <local:EmailFormatterBehavior />
+                        </Entry.Behaviors>
+                    </Entry>
                     <Label Text="Endereço" FontSize="Medium" FontAttributes="Bold" />
                     <Entry x:Name="txtendereco" Keyboard="Plain"/>
                     <Label Text="Numero" FontSize="Medium" FontAttributes="Bold" />
                     <Entry x:Name="txtNumero" Keyboard="Plain"/>
                     <Label Text="Telefone" FontSize="Medium" FontAttributes="Bold" />
-                    <Entry x:Name="txtTelefone" Keyboard="Plain"/>
-                    <Label Text="Cidade" FontSize="Medium" FontAttributes="Bold" />
-                    <Entry x:Name="txtCidade" Keyboard="Plain"/>
+
+                    <Entry x:Name="txtTelefone" Keyboard="Telephone" />
                     <Label Text="Estado" FontSize="Medium" FontAttributes="Bold" />
-                    <Entry x:Name="txtEstado" Keyboard="Plain"/>
-                    <Button Text="Cadastar" BackgroundColor="White" FontAttributes="Bold" x:Name="btnCadastrar" Clicked="btnCadastrar_Clicked" />
+                    <Picker x:Name="estadosPiker" Title="Selecione um estado" SelectedIndexChanged="estadosPiker_SelectedIndexChanged">
+                        <Picker.ItemsSource>
+                        </Picker.ItemsSource>
+                    </Picker>
+                    <Label Text="Cidade" FontSize="Medium" FontAttributes="Bold" />
+                    <Picker x:Name="cidadesPiker" Title="Selecione uma cidade" SelectedIndexChanged="cidadesPiker_SelectedIndexChanged">
+                        <Picker.ItemsSource>
+                        </Picker.ItemsSource>
+                     </Picker>
+                    
+                    <Button Text="Cadastar" BackgroundColor="Green" FontAttributes="Bold" TextColor="White" x:Name="btnCadastrar" Clicked="btnCadastrar_Clicked" />
                 </StackLayout>
             </ScrollView>   
         </StackLayout>
