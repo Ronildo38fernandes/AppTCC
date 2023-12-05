@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppTCC.Views.PageCadastroProduto" Title="CADASTRO DE PRODUTOS">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Produto" FontSize="Medium" FontAttributes="Bold"/>
+            <Entry x:Name="txtproduto" Keyboard="Default"/>
+            <Label Text="Cor" FontSize="Medium" FontAttributes="Bold"/>
+            <Entry x:Name="txtcor" Keyboard="Default"/>
+            <Label Text="Quantidade" FontSize="Medium" FontAttributes="Bold"/>
+            <Entry x:Name="txtquantidade" Keyboard="Default"/>
+            <Label Text="Preço" FontSize="Medium" FontAttributes="Bold"/>
+            <Entry x:Name="txtpreco" Keyboard="Default"/>
+            <Button Text="Cadastrar" BackgroundColor="Green" FontAttributes="Bold" TextColor="White" x:Name="btnCadastrarProduto" Clicked="btnCadastrarProduto_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

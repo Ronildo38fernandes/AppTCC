@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppTCC.Views.PageUpProduo" Title="PRODUTOS">
+    <ContentPage.Content>
+        <StackLayout Margin="3">
+            <Label Text="Produto" FontSize="Medium" FontAttributes="Bold" />
+            <Entry x:Name="txtproduto" Keyboard="Plain" Text="{Binding nomeProduto, Mode=TwoWay}"/>
+            <Label Text="Cor" FontSize="Medium" FontAttributes="Bold" />
+            <Entry x:Name="txtcor" Keyboard="Plain" Text="{Binding cor,Mode=TwoWay}" />
+            <Label Text="Quantidade" FontSize="Medium" FontAttributes="Bold"/>
+            <Entry x:Name="txtquantidade" Keyboard="Numeric" Text="{Binding quantidade,Mode=TwoWay}"/>
+            <Label Text="Preço" FontSize="Medium" FontAttributes="Bold"/>
+            <Entry x:Name="txtpreco" Keyboard="Numeric" Text="{Binding preco,Mode=TwoWay}" />
+
+            <Button Text="Atualizar" BackgroundColor="Orange" FontAttributes="Bold" TextColor="White" x:Name="btnAtualizar" Clicked="btnAtualizar_Clicked"/>
+            <Button Text="Apagar" BackgroundColor="Red" FontAttributes="Bold" TextColor="White" x:Name="btnDeletar" Clicked="btnDeletar_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -14,7 +14,7 @@ namespace AppTCC.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PageCliente : ContentPage
     {
-        List<Cliente> clientes = Conexao.ListarClientes();
+        List<Cliente> clientes = Conexao.ListarClientes();  
 
 			
 		public PageCliente()
@@ -26,7 +26,7 @@ namespace AppTCC.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            ClientesListView.ItemsSource = Conexao.ListarClientes(); ;
+            ClientesListView.ItemsSource = Conexao.ListarClientes();
         }
 
         private void Clientes_TextChanged(object sender, TextChangedEventArgs e)

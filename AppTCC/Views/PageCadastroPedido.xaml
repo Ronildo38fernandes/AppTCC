@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppTCC.Views.PageCadastroPedido" Title="PEDIDOS" >
+    <ContentPage.Content>
+        <StackLayout>
+            <!-- Seletor de Produtos -->
+
+            <Picker x:Name="clientePicker" Title="Selecione o Cliente" SelectedIndexChanged="clientePicker_SelectedIndexChanged" TitleColor="Gray">
+                <Picker.ItemsSource>
+                </Picker.ItemsSource>
+            </Picker>
+            <Picker x:Name="productPicker" Title="Selecione o produto" SelectedIndexChanged="productPicker_SelectedIndexChanged" TitleColor="Gray">
+                <Picker.ItemsSource>
+                </Picker.ItemsSource>
+            </Picker>
+            <Picker x:Name="colorProdutoPicker" Title="Selecione a cor" SelectedIndexChanged="colorProdutoPicker_SelectedIndexChanged" TitleColor="Gray">
+                <Picker.ItemsSource>
+                </Picker.ItemsSource>
+            </Picker>
+            <Label Text="Quantidade" FontSize="Body" FontAttributes="Bold"/>
+            <Entry x:Name="txtQuantidade" Keyboard="Numeric" />
+
+            <!-- Botão Adicionar -->
+            <Button Text="Adicionar ao Carrinho" Clicked="AddToCart_Clicked" />
+
+            <!-- Produtos no Carrinho -->
+            <Label Text="Produtos no Carrinho" />
+            <ListView x:Name="cartListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                             
+                                <Label Text="{Binding nomeProduto}" VerticalOptions="Center" />
+                                <Label Text="{Binding cor}" VerticalOptions="Center" />
+                                <Label Text="{Binding preco, StringFormat='Preco total R$ {0:F2}'}" VerticalOptions="Center" />
+                                <Label Text="{Binding quantidade,StringFormat='QTD: {0:F0}' }" VerticalOptions="Center" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Cadastrar" BackgroundColor="Green" FontAttributes="Bold" TextColor="White" x:Name="btnCadastrarPedido" Clicked="btnCadastrarPedido_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -17,10 +17,10 @@ namespace AppTCC.Controller
         {
             List<Cliente> listaclientes = new List<Cliente>();
             string sql = "SELECT * FROM cliente";
-            using (MySqlConnection con = new MySqlConnection(conn))
+            using (MySqlConnection conn = new MySqlConnection(Conexao.conn))
             {
-                con.Open();
-                using (MySqlCommand cmd = new MySqlCommand(sql, con))
+                conn.Open();
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
                 {
                     using (MySqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -36,14 +36,14 @@ namespace AppTCC.Controller
                                 endereco = reader.GetString(5) ?? " ",
                                 numero = reader.GetString(6) ?? " ",
                                 telefone =  reader.GetString(7) ?? " ",
-                                cidade =reader.GetString(8) ?? " ",
+                                cidade = reader.GetString(8) ?? " ",
                                 estado = reader.GetString(9) ?? " " 
                             };
                             listaclientes.Add(cliente);
                         }
                     }
                 }
-                con.Close();
+                conn.Close();
                 return listaclientes;
             }
         }

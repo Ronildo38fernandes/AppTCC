@@ -1,12 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AppTCC.Views"
              x:Class="AppTCC.Views.PageProduto" Title="PRODUTOS">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Página dos Produtos"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <SearchBar x:Name="Produtos" TextChanged="Produtos_TextChanged"/>
+            <ListView x:Name="ProdutoListView" ItemSelected="ProdutoListView_ItemSelected" RowHeight="100" >
+                <ListView.ItemTemplate >
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <StackLayout Orientation="Vertical" Padding="5" >
+                                    <Label Text="{Binding nomeProduto}" TextColor="Navy" FontSize="20" />
+                                    <Label Text="{Binding cor}" TextColor="Navy" FontSize="20"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="user.png" Clicked="ToolbarItem_Clicked"/>        
+    </ContentPage.ToolbarItems>
 </ContentPage>
+    
+   

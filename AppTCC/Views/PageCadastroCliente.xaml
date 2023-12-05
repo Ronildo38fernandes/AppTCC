@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:AppTCC.Controller"
-             x:Class="AppTCC.Views.PageCadastroCliente">
+             x:Class="AppTCC.Views.PageCadastroCliente" Title="CADASTRO DE CLIENTES">
              
     <ContentPage.Content>
         <StackLayout Margin="15">
@@ -43,7 +43,7 @@
                         </Picker.ItemsSource>
                      </Picker>
                     
-                    <Button Text="Cadastar" BackgroundColor="Green" FontAttributes="Bold" TextColor="White" x:Name="btnCadastrar" Clicked="btnCadastrar_Clicked" />
+                    <Button Text="Cadastrar" BackgroundColor="Green" FontAttributes="Bold" TextColor="White" x:Name="btnCadastrar" Clicked="btnCadastrar_Clicked" />
                 </StackLayout>
             </ScrollView>   
         </StackLayout>
