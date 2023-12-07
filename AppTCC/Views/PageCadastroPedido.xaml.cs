@@ -55,16 +55,21 @@ namespace AppTCC.Views
 
                 productsInCart.Add(selectedProduct);
 
+
                 ItemPedido itemPedido = new ItemPedido();
                 itemPedido.id_produto = selectedProduct.id_produto;
                 itemPedido.quantidade = selectedProduct.quantidade;
                 itemPedido.totalItem = selectedProduct.preco;
+                itemPedido.id_item = ItemPedidoCon.ObterUltimoIdItem() + 1;
 
-                itemPedido.id_item = ItemPedidoCon.InserirItempedido(itemPedido.id_produto, itemPedido.quantidade, itemPedido.totalItem);
+                
+                ItemPedidoCon.InserirItempedido(itemPedido.id_produto, itemPedido.quantidade, itemPedido.totalItem);
                
                 
                 
                 listaItem.Add(itemPedido);
+
+
                 //resetando o preco
                 selectedProduct.preco = preco_original;
 
@@ -104,7 +109,22 @@ namespace AppTCC.Views
 
         private void btnCadastrarPedido_Clicked(object sender, EventArgs e)
         {
-            
+            if (listaItem != null) 
+            {
+                int quantidadeItem = listaItem.Count;
+                double total = 0;
+                foreach (var items in listaItem)
+                {
+                    total = total + items.totalItem;  
+                }
+
+                foreach(var item in listaItem)
+                {
+                    PedidoCon.InserirPedido(clienteSelecionado.id_cliente,item.id_item,quantidadeItem,total);
+                }
+
+                Navigation.PopAsync();
+            }
 
         }
     }
