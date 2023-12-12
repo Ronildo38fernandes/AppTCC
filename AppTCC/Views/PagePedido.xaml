@@ -7,9 +7,25 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Página dos Pedidos"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+            <ListView x:Name="PedidosListView" RowHeight="160" >
+                <ListView.ItemTemplate >
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical" Padding="3">
+                                
+                                    <Label Text="{Binding nome}" TextColor="Black" FontSize="20"   VerticalOptions="Center"/>
+                                    <Label Text="{Binding nomeProduto}" TextColor="Navy" FontSize="20"   VerticalOptions="Center"/>
+                                    <Label Text="{Binding cor}" TextColor="Navy" FontSize="20"  VerticalOptions="Center"/>
+                                    <Label Text="{Binding quantidade}" TextColor="Navy" FontSize="20"/>
+                                    <Label Text="{Binding total, StringFormat='Preco total R$ {0:F2}'}" TextColor="Navy" FontSize="20"  VerticalOptions="Center"/>
+                                
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

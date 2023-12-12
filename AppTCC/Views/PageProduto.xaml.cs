@@ -20,7 +20,7 @@ namespace AppTCC.Views
             InitializeComponent();
 
 		}
-
+		
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
